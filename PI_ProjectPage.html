@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Physical Sound Interactions with LeapMotion</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
+  <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" />
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</head>
+
+<div id="lead-small">
+  <div id="lead-content">
+    <h1s><br />Designing Physical Sound Interactions for the LeapMotion</h1s>
+    <div style="
+        display: flex;
+        justify-content: space-evenly;
+    ">
+    </div>
+  </div>
+  <!-- End #lead-content -->
+  <div id="lead-overlay"></div>
+  <!-- End #lead-down -->
+</div>
+<!-- End #lead -->
+
+<body>
+  <div id="mobile-menu-open" class="shadow-large">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+  <!-- End #mobile-menu-toggle -->
+  <header>
+    <div id="mobile-menu-close">
+      <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <ul id="menu" class="shadow">
+      <li>
+        <a href="#about">Project Description</a>
+      </li>
+      <li>
+        <a href="#projects">Video Demos</a>
+      </li>
+    </ul>
+  </header>
+  <!-- End header -->
+
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2 class="heading">Project Description</h2>
+        </div>
+        <div class="col-md-8">
+          <p>
+            This project was completed as my dissertation project for the MSc Sound Design course at
+            the University of Edinburgh in 2022.
+            <br /><br />
+            This project explored what might make Physical Sound Interactions 'joyful', and how one can
+            tailor their design process around these principles.
+            <br /><br />
+            Within the project, I created an
+            <a href="https://github.com/ridleyjj/LeapMotion-to-OSC-Interface">Interface Software</a> using Unity
+            and C# which connected the LeapMotion camera data to local OSC ports. I then used this interface
+            to design physical interactions with sound, using Max/MSP as my prototyping software to create the
+            sonic behaviour.
+            <br /><br />
+            You can read the full report from this project
+            <a href="../FinalProject.html">here</a>.
+            <br /><br />
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End #about -->
+
+<!-- Portfolio -->
+  <div id="projects">
+    <div class="awesome-portfolio-area fix">
+      <div class="container">
+        <!-- section-heading start -->
+        <h2 class="heading">Video Demos</h2>
+        <!-- section-heading end -->
+      </div>
+      <!-- awesome-portfolio start -->
+      <div class="container">
+        <div class="awesome-portfolio">
+          <div class="awesome-portfolio-menu">
+            <ul>
+              <li class="filter active" data-filter="all">
+                <button type="button" class="btn btn-outline-primary">
+                  All
+                </button>
+              </li>
+              <li class="filter" data-filter=".music">
+                <button class="btn btn-outline-primary">Musical</button>
+              </li>
+              <li class="filter" data-filter=".sd">
+                <button class="btn btn-outline-primary">Sound Design</button>
+              </li>
+              <li class="filter" data-filter=".game">
+                <button class="btn btn-outline-primary">Game</button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="awesome-portfolio-content" id="MixItUp68DC04">
+            <!-- single-awesome-portfolio start -->
+            <div class="single-awesome-portfolio mix all flat music" style="display: inline-block;">
+              <a href="https://vimeo.com/738257731/ceea028c41">
+                <div class="awesome-img" style="background-image: url('../images/Theremin.png');"></div>
+                <div class="awesome-info">
+                  <h3>Theremin</h3>
+                  <p>
+                    Model of a theremin. One hand controls volume and vibrato, the other hand controls pitch
+                    through a combination of position, rotation, and hand shape.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <!-- single-awesome-portfolio end -->
+            <!-- single-awesome-portfolio start -->
+            <div class="single-awesome-portfolio mix all flat sd" style="display: inline-block;">
+              <a href="https://vimeo.com/719826180">
+                <div class="awesome-img" style="background-image: url('../images/FM.png');"></div>
+                <div class="awesome-info">
+                  <h3>FM Synth</h3>
+                  <p>
+                    An interaction using FM Synthesis to create an interaction where each hand controls a distinct
+                    synthesiser through its movements.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <!-- single-awesome-portfolio end -->
+
+            <!-- single-awesome-portfolio start -->
+            <div class="single-awesome-portfolio mix all flat game" style="display: inline-block;">
+              <a href="https://vimeo.com/738304157">
+                <div class="awesome-img" style="background-image: url('../images/Spells.png');"></div>
+                <div class="awesome-info">
+                  <h3>Magic Spellcasting</h3>
+                  <p>
+                    An interaction that combines sound systems from a few of my other interactions, and uses them
+                    to create a spell casting interaction, whereby the user charges and casts spells by closing
+                    and opening their fists.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <!-- single-awesome-portfolio end -->
+
+            <!-- single-awesome-portfolio start -->
+            <div class="single-awesome-portfolio mix all flat sd" style="display: inline-block;">
+              <a href="https://vimeo.com/738253819">
+                <div class="awesome-img" style="background-image: url('../images/Concatenative.png');"></div>
+                <div class="awesome-info">
+                  <h3>Concatenative Synth</h3>
+                  <p>
+                    An interaction that uses concatenative synthesis with a large corpus of sounds to create intense
+                    erratic sound effects. One hand controls volume by opening and closing, and a filter by rotating,
+                    whilst the other hands position determines the audio to playback.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <!-- single-awesome-portfolio end -->
+
+            <!-- single-awesome-portfolio start -->
+            <div class="single-awesome-portfolio mix all flat sd" style="display: inline-block;">
+              <a href="https://vimeo.com/738243186">
+                <div class="awesome-img" style="background-image: url('../images/Scrubber.png');"></div>
+                <div class="awesome-info">
+                  <h3>Scrubbing Explorer</h3>
+                  <p>
+                    An interaction that connects the playback rate of an audio file to the velocity of the users
+                    hand. The audio is 'frozen' in a particular point so that the user can choose which area of the
+                    audio file to 'explore' from. This interaction was designed with foley applications in mind.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <!-- single-awesome-portfolio end -->
+
+            <!-- single-awesome-portfolio start -->
+            <div class="single-awesome-portfolio mix all flat music" style="display: inline-block;">
+              <a href="https://vimeo.com/736921894/5919e2dc7f">
+                <div class="awesome-img" style="background-image: url('../images/PianoClouds.png');"></div>
+                <div class="awesome-info">
+                  <h3>Piano Clouds</h3>
+                  <p>
+                    In this interaction, the users hand movements trigger piano samples in a wind chime-esque
+                    way. The opening and closing of the left hand determines which of 4 related chords these samples
+                    are generated from.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <!-- single-awesome-portfolio end -->
+
+            <!-- single-awesome-portfolio start -->
+            <div class="single-awesome-portfolio mix all flat music" style="display: inline-block;">
+              <a href="https://vimeo.com/733388258/8ba613c884">
+                <div class="awesome-img" style="background-image: url('../images/Sampler.png');"></div>
+                <div class="awesome-info">
+                  <h3>Drum Sampler</h3>
+                  <p>
+                    An interaction where drum samples are triggered by threshold based velocity triggers. The
+                    direction of velocity is used to create a sense that these samples are placed in different positions.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <!-- single-awesome-portfolio end -->
+
+            <!-- single-awesome-portfolio start -->
+            <div class="single-awesome-portfolio mix all flat sd" style="display: inline-block;">
+              <a href="https://vimeo.com/731322891/f2340fc086">
+                <div class="awesome-img" style="background-image: url('../images/SpeechSynth.png');"></div>
+                <div class="awesome-info">
+                  <h3>Speech Synthesis</h3>
+                  <p>
+                    This interaction uses the formant filtered square wave approach to speech synthesis to
+                    create an unpredictable interaction where the users movements produce speech-like sound.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <!-- single-awesome-portfolio end -->
+
+            <!-- single-awesome-portfolio start -->
+            <div class="single-awesome-portfolio mix all flat music" style="display: inline-block;">
+              <a href="https://vimeo.com/732055948/3fef928cc2">
+                <div class="awesome-img" style="background-image: url('../images/DialMusic.png');"></div>
+                <div class="awesome-info">
+                  <h3>Dial Music</h3>
+                  <p>
+                    This interaction is designed to be a playable musical instrument, using the pinch
+                    of each hand to control the volume of two synthesisers. The pitch of each synthesiser
+                    is controlled by the rotation of the hand (hence 'dial'-music) and its position in the y
+                    axis.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <!-- single-awesome-portfolio end -->
+
+          </div>
+        </div>
+        <!-- awesome-portfolio end -->
+      </div>
+    </div>
+  </div>
+  <!-- End Portfolio -->
+
+
+
+  <footer>
+    <div class="container">
+
+
+      <div class="row center">
+        <div class="SquareArea">
+          <div class="LilSquare"></div>
+          <div class="MedSquare"></div>
+          <div class="BigSquare"></div>
+          <div class="MedSquare"></div>
+          <div class="LilSquare"></div>
+          <div class="SunLine"></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End footer -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161204876-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "UA-161204876-1");
+  </script>
+
+  <script src="js/scripts.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+  <script>
+    $(function () {
+      $(".awesome-portfolio-content").mixItUp({
+        animation: {
+          duration: 250,
+          nudge: false,
+          reverseOut: false,
+          effects: "fade",
+        },
+      });
+    });
+  </script>
+</body>
+
+</html>
