@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Jack Ridley</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        @page {
+            size: A4;
+            margin: 12mm;
+        }
+
+        html,
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            color:#7e8890;
+            line-height: 1.4rem;
+        }
+
+        .page-container {
+            width: 210mm;
+            margin: 0 12mm;
+            position: relative;
+        }
+
+        .skills-list {
+            column-count: 4;
+        }
+
+        h1 {
+            color: #3893e3;
+            font-weight: 1500;
+            font-size: 2.25em;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: #563de4;
+            font-weight: 600;
+            font-size: 1.5em;
+            margin-top: 5px;
+        }
+
+        .contact-box {
+            position: absolute;
+            top: 10px;
+            left: 650px;
+        }
+
+        .contact-item {
+            font-size: 0.75rem;
+        }
+
+        .fa {
+            margin-right: 0.5rem;
+        }
+
+        h3 {
+            color: #3893e3;
+        }
+
+        .education-container, .education-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .course, .grade, .institution {
+            margin-right: 0.65rem;
+        }
+
+        .role-title, .course {
+            color: #563de4;
+            font-weight: 600;
+        }
+
+        .employer {
+            font-weight: 600;
+        }
+
+        .item {
+            padding-left: 1rem;
+            margin-left: 1rem;
+            border-left: 1.5px solid #3893e3;
+            /* border-left: 2px solid #563de4; */
+        }
+
+        .item-title {
+            font-weight: 600;
+        }
+
+        
+        .date-range {
+            float: right;
+            font-weight: 100;
+        }
+
+        /* .item-list {
+            column-count: 2;
+        } */
+
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <h1>Jack Ridley</h1>
+        <h2>Software Engineer & Sound Designer</h2>
+        <div class="contact-box">
+            <div class="contact-item"><i class="fa fa-envelope"></i> ridley.jj@outlook.com</div>
+            <div class="contact-item"><i class="fa fa-globe"></i> www.jjridley.com</div>
+            <div class="contact-item"><i class="fa fa-github"></i> github.com/ridleyjj</div>
+        </div>
+
+        <!-- intro start -->
+        <p>
+            <b>My joy as a Designer comes from designing for the user; using technical complexity to present user experiences that feel 
+            intuitive and expressive.</b> I love the challenge of designing for the unpredictable user, designing tools that enable users 
+            to create well beyond what I may have imagined for them. 
+        </p>
+        <!-- intro end -->
+
+        <!-- education start -->
+        <div class="education">
+            <h3>Education</h3>
+            <div class="education-container">
+                <div class="education-item">
+                    <div class="course">
+                        MSc Sound Design
+                    </div>
+                    <div class="grade">
+                        1st
+                    </div>
+                    <div class="institution">
+                        University of Edinburgh
+                    </div>
+                </div>
+                <div class="divider">|</div>
+                <div class="education-item">
+                    <div class="course">
+                        BA (Hons) Drama
+                    </div>
+                    <div class="grade">
+                        2:1
+                    </div>
+                    <div class="institution">
+                        Queen Mary University of London
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- education end -->
+
+        <!-- skills start -->
+        <div class="section">
+            <h3>Technical Skills</h3>
+            <ul class="skills-list">
+                <li>Java</li>
+                <li>TypeScript</li>
+                <li>JavaScript</li>
+                <li>C++</li>
+                <li>C#</li>
+                <li>SQL</li>
+                <li>Git</li>
+                <li>DSP</li>
+                <li>Wwise</li>
+                <li>Unity</li>
+                <li>Unreal</li>
+                <li>Max/MSP</li>
+                <li>pureData</li>
+                <li>JUCE Framework</li>
+                <li>Angular</li>
+                <li>python</li>
+            </ul>
+        </div>
+        <!-- skills end -->
+
+        <!-- experience start -->
+        <div class="section">
+            <h3>Experience</h3>
+            <div><span class="role-title">Software Engineer</span> - <span class="employer">Accolite Digital (Glasgow)</span> <span class="date-range">2022 - present</span></div>
+            <div class="experience">
+                <div class="item">
+                    <p class="item-description">
+                    As an Accolite consultant, I work full-time within an Agile team at Morgan Stanley, working on internal web applications 
+                    built with Java and Typescript as a full stack developer.
+                    </p>
+                    <ul class="item-list">
+                        <li>Received training in Java, Spring Boot, Typescript, Angular, HTML, CSS, Agile, and Git</li>
+                        <li>Given particular responsibility for consolidating UI and UX of applications</li>
+                        <li>Championed many refactors within my project, reducing codebase lines by over 10%</li>
+                        <li>Conducted regular code reviews for both Java and TypeScript</li>
+                    </ul>
+                </div>
+            </div>
+            <div><span class="role-title">Sound Designer</span> - <span class="employer">Freelance</span><span class="date-range">2018 - 2021</span></div>
+            <div class="experience">
+                <div class="item">
+                    <p class="item-description">
+                        Designed sound for Theatre, Audiobooks and Podcasts.
+                    </p>
+                    <ul class="item-list">
+                        <li>Designed sound effects and composed/recorded music to be used in the live performances</li>
+                        <li>Programmed sampler systems that I performed live using a MIDI controller</li>
+                        <li>Narrated, edited and produced audio for audiobooks. Mastering to distrubution standards</li>
+                        <li>Won IBPA Benjamin Franklin Gold Award 2022, Audiobook: Fiction for my work on <i>Brilliant White Peaks</i></li>
+                    </ul>
+                </div>
+                <!-- <div class="item">
+                    <p class="item-title">
+                        Podcast Editor for PyData Manchester Podcast 
+                    </p>
+                    <p class="item-description">
+                        PyDataMCR is a community group which focuses on open-source data tooling. Episodes covered broad data analysis to in-depth machine-learning.
+                    </p>
+                    <ul class="item-list">
+                        <li>Edited audio and composed music</li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+        <!-- experience ends -->
+
+        <!-- notable projects starts -->
+        <div class="notable-projects">
+            <h3>Notable Projects</h3>
+            <div><span class="role-title">Research Project</span> - <span class="employer">"Sonic Gestures: Investigating Joy in Physical Sound Interactions"</span></div>
+            <div class="item">
+                <!-- <p class="item-title">
+                    Research Project - "Sonic Gestures: Investigating Joy in Physical Sound Interactions"
+                </p> -->
+                <ul class="item-list">
+                    <li>Designed interface software for max/MSP and the LeapMotion hand tracker using Unity and C#</li>
+                    <li>Designed software for 11 distinct hand-controlled sound interactions using max/MSP</li>
+                    <li>Investigation focused on inuitivity vs. expressivity in creating joyful interactions</li>
+                </ul>
+            </div>
+            <div><span class="role-title">Mechanical Sounds Audio Plugin</span></div>
+            <div class="item">
+                <!-- <p class="item-title">
+                    Mechanical Sounds Audio Plugin
+                </p> -->
+                <ul class="item-list">
+                    <li>Audio Plugin synthesiser built using C++ and the JUCE Framework</li>
+                    <li>Used physical modelling principles to create sounds of engines, motors, and fans</li>
+                    <li>Code is available on my github: https://github.com/ridleyjj/MechanicalModelling_JUCE</li>
+                </ul>
+            </div>
+        </div>
+        <!-- notable projects end -->
+        
+        <!-- awards start -->
+        <!-- <div class="awards">
+            <h3>Awards</h3>
+            <ul>
+                <li>IBPA Benjamin Franklin Gold Award 2022, Audiobook: Fiction, for <i>Brilliant White Peaks</i> - Narrator and Audio Producer</li>
+            </ul>
+        </div> -->
+        <!-- awards end -->
+    </div>
+</body>
+</html>

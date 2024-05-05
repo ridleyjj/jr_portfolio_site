@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Design with p5 and Tone</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
+  <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" />
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</head>
+
+<div id="lead-small">
+  <div id="lead-content">
+    <h1s><br />Design with p5.js and Tone.js</h1s>
+    <div style="
+        display: flex;
+        justify-content: space-evenly;
+    ">
+    </div>
+  </div>
+  <!-- End #lead-content -->
+  <div id="lead-overlay"></div>
+  <!-- End #lead-down -->
+</div>
+<!-- End #lead -->
+
+<body>
+  <div id="mobile-menu-open" class="shadow-large">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+  <!-- End #mobile-menu-toggle -->
+  <header>
+    <div id="mobile-menu-close">
+      <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <ul id="menu" class="shadow">
+      <li>
+        <a href="#about">Project Description</a>
+      </li>
+      <li>
+        <a href="#projects">The Studies</a>
+      </li>
+    </ul>
+  </header>
+  <!-- End header -->
+
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2 class="heading">Project Description</h2>
+        </div>
+        <div class="col-md-8">
+          <p>
+            A short series of artistic studies that I made in 2023 to explore audio-visual design using the p5.js and Tone.js libraries for javascript.
+            <br/>
+            <br/>
+            I wanted to stylise these studies with the visual constraint of using only simple shapes and colour, and I wanted to explore a range of sonic pairings
+            with this visual aesthetic: from peaceful to playful to silent.
+            <br/>
+            <br/>
+            Ultimately, this was a really fun exercise in realising some simple interactions made possible by these libraries. Challenges did arise however through
+            the limitations of designing for the browser and all of the inherent variety that entails. Currently the interactions are all designed with a mouse in mind,
+            compatibility with mobile devices is not yet consistent.
+            <br/>
+            <br/>
+            All of the repositories and the source code for these studies are available on my <a href="https://github.com/stars/ridleyjj/lists/p5-and-tone">GitHub</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End #about -->
+
+<!-- Portfolio -->
+  <div id="projects">
+    <div class="awesome-portfolio-area fix">
+      <div class="container">
+        <!-- section-heading start -->
+        <h2 class="heading">The Studies</h2>
+        <!-- section-heading end -->
+      </div>
+      <!-- awesome-portfolio start -->
+      <div class="container">
+        <div class="awesome-portfolio">
+          <div class="awesome-portfolio-menu">
+            <ul>
+              <li class="filter active" data-filter="all">
+                <button type="button" class="btn btn-outline-primary">
+                  All
+                </button>
+              </li>
+              <li class="filter" data-filter=".av">
+                <button class="btn btn-outline-primary">Audio Visual</button>
+              </li>
+              <li class="filter" data-filter=".vis">
+                <button class="btn btn-outline-primary">Visual Only</button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="awesome-portfolio-content" id="MixItUp68DC04">
+            <!-- single-awesome-portfolio start -->
+            <div class="single-awesome-portfolio mix all flat av" style="display: inline-block;">
+              <a href="https://ridleyjj.github.io/OrbGarden/">
+                <div class="awesome-img" style="background-image: url('./images/OrbGarden.png');"></div>
+                <div class="awesome-info">
+                  <h3>Orb Garden</h3>
+                  <p>
+                    A slow interaction that can be built up by placing (click + hold) orbs around the screen. I wanted to play with
+                    the joint audio visual expression of proximity between the mouse and the orbs.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <!-- single-awesome-portfolio end -->
+            <!-- single-awesome-portfolio start -->
+            <div class="single-awesome-portfolio mix all flat av" style="display: inline-block;">
+              <a href="https://ridleyjj.github.io/WobblyBlob/">
+                <div class="awesome-img" style="background-image: url('./images/WobblyBlob.png');"></div>
+                <div class="awesome-info">
+                  <h3>Wobbly Blob</h3>
+                  <p>
+                    A fun attempt at a simple intuitive synth using the x-y position of the mouse to control a FM Synth. I really enjoy the
+                    simplicity of the click and drag mechanic and the satisfying wobble of the visuals.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <!-- single-awesome-portfolio end -->
+
+            <!-- single-awesome-portfolio start -->
+            <div class="single-awesome-portfolio mix all flat av" style="display: inline-block;">
+              <a href="https://ridleyjj.github.io/Constellation/">
+                <div class="awesome-img" style="background-image: url('./images/Constellation2.png');"></div>
+                <div class="awesome-info">
+                  <h3>Constellations</h3>
+                  <p>
+                    Inspired by the perpetual motion of classic screen savers, another study in trying to create a satisfying visuals with
+                    only simple shapes, audio files and colour.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <!-- single-awesome-portfolio end -->
+
+            <!-- single-awesome-portfolio start -->
+            <div class="single-awesome-portfolio mix all flat vis" style="display: inline-block;">
+              <a href="https://ridleyjj.github.io/PaintSplats/">
+                <div class="awesome-img" style="background-image: url('./images/PaintSplats.png');"></div>
+                <div class="awesome-info">
+                  <h3>Paint Splats</h3>
+                  <p>
+                    This is the only silent study in this series, but I found that for me the silence played well with the surprising visual noise
+                    that is triggered by the mouse movement.
+                    <br/>
+                    A click changes the colours. 
+                  </p>
+                </div>
+              </a>
+            </div>
+            <!-- single-awesome-portfolio end -->
+
+          </div>
+        </div>
+        <!-- awesome-portfolio end -->
+      </div>
+    </div>
+  </div>
+  <!-- End Portfolio -->
+
+
+
+  <footer>
+    <div class="container">
+
+
+      <div class="row center">
+        <div class="SquareArea">
+          <div class="LilSquare"></div>
+          <div class="MedSquare"></div>
+          <div class="BigSquare"></div>
+          <div class="MedSquare"></div>
+          <div class="LilSquare"></div>
+          <div class="SunLine"></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End footer -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161204876-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "UA-161204876-1");
+  </script>
+
+  <script src="js/scripts.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+  <script>
+    $(function () {
+      $(".awesome-portfolio-content").mixItUp({
+        animation: {
+          duration: 250,
+          nudge: false,
+          reverseOut: false,
+          effects: "fade",
+        },
+      });
+    });
+  </script>
+</body>
+
+</html>
