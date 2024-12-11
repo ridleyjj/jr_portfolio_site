@@ -23,3 +23,8 @@
 .list {
     text-align: left !important;
 }
+
+#downloads {
+    border-bottom: 1px solid #dcd9d9;
+    padding-bottom: 75px;
+}
