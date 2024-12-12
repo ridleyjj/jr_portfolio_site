@@ -4,9 +4,20 @@
     align-items: center;
 }
 
-.video-demo {
-    margin-block:1rem;
-    height:25rem;
+@media only screen and (max-width: 980px) {
+    .video-demo {
+        margin-block: 1rem;
+        height: 12rem;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 980px) {
+    .video-demo {
+        margin-block: 1rem;
+        height: 25rem;
+        width: 100%;
+    }
 }
 
 .audio-demo {
@@ -27,4 +38,47 @@
 #downloads {
     border-bottom: 1px solid #dcd9d9;
     padding-bottom: 75px;
+}
+
+#demos {
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Carousel Stuff */
+
+.carousel-section {
+    width: 100%;
+    border-bottom: 5px solid #4c9ee7;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+}
+
+@media only screen and (max-width: 980px) {
+    .carousel-section {
+        height: 25rem;
+    }
+}
+
+@media only screen and (min-width: 980px) {
+    .carousel-section {
+        height: 38rem;
+    }
+}
+
+
+.carousel-heading {
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-family: 'Lato', sans-serif;
+}
+
+.carousel-description {
+    font-size: 1;
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 2.5rem;
+    color: #74808a;
 }
