@@ -82,3 +82,7 @@
     padding-inline: 2rem;
     color: #74808a;
 }
+
+.glide__bullet--active {
+    background-color: rgb(229 229 229);
+}
