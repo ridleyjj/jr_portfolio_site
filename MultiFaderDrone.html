@@ -72,7 +72,7 @@
   <!-- video demo start -->
   <div class="container">
     <div class="centered video-demo">
-      <iframe title="vimeo-player" src="https://player.vimeo.com/video/1038100019?h=2ecd3343ba" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+      <iframe title="vimeo-player" src="https://player.vimeo.com/video/1043618240?h=33e6295450" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
   <!-- video demo end -->
@@ -88,11 +88,12 @@
             The goal of this project was to make a fun GUI display using the JUCE Framework. 
             <br/>
             <br/>
-            The plugin is a drone synthesiser, designed to produce constant sound formed by 2-100 sine oscillators.
+            The plugin is a drone synthesiser, designed to produce constant sound formed by 1-100 oscillators.
             <br/>
-            I add and remove the oscillators from the plugin in pairs, with each pair oscillating their levels in tandem
-            like a siren. This way, I can ensure that the level of each pair was capped at a certain level,
-            which is set according to the total number of pairs.
+            <br/>
+            Each oscillator oscillates its volume level at a different rate. Each time that its volume fades to 0, it randomly
+            selects a new frequency for its tone and a new position in the stereo field. It selects these new values from ranges that
+            the user sets.
             <br/>
             <br/>
             The user is given control for:
@@ -104,18 +105,19 @@
               <li><b>LFO Rate</b> - this increases the range of frequencies used to oscillate the volumes of each pair of oscillators. This is a range
                 rather than a simple scale factor, therefore even at the highest rate values, there will be some oscillators which remain slow.</li> 
               <li><b>Stereo Width</b> - this determines the range from which an oscillator will choose a new pan position from <i>(oscillators reset when their volume reaches 0)</i></li> 
+              <li><b>Wave Shape</b> - this determines the mix of Sine and Triangle wave that the oscillators use. (Wave Shape resets when oscillator volume reaches 0, so they will eventually all take the same value but this take time depending on the oscillators' rates) <i>(oscillators reset when their volume reaches 0)</i></li> 
               <li><b>Light/Dark Mode</b> - the moon/sun icons in the top right corner toggle the UI colour theme.</li> 
             </ul>
             The visualiser in the centre of the plugin provides a visual representation of the oscillators that are currently playing.
             <div class="centered" style="margin-block:1rem;">
-              <img src="images/Drone_UI_Light.png" class="inline-image" alt="A screenshot of the drone visualiser in light mode, showing a cluster of circles of different shades and sizes, representing the oscillators">
-              <img src="images/Drone_UI_Dark.png" class="inline-image" alt="A screenshot of the drone visualiser in dark mode, showing a cluster of circles of different shades and sizes, representing the oscillators">
+              <img src="images/MultiFaderDrone_Light_Screenshot.png" class="inline-image" alt="A screenshot of the drone visualiser in light mode, showing a cluster of circles of different shades and sizes, representing the oscillators">
+              <img src="images/MultiFaderDrone_Dark_Screenshot.png" class="inline-image" alt="A screenshot of the drone visualiser in dark mode, showing a cluster of circles of different shades and sizes, representing the oscillators">
             </div>
             Each oscillator is represented by a circle in the visualiser. The diameter of the circle is determined by the oscillator's level, 
             the brightness of the circle is determined by the frequency of the oscillator, and the position of the circle is determined by the 
             stereo position of the oscillator <i>(the distance from the centre of the visualiser is determined by the absolute stereo 
             position, therefore the visualiser does not show you whether an oscillator is positioned left or right, but just gives an 
-            idea of how wide the sound is)</i>.
+            idea of how wide the sound is). Finally the wave shape will change the outline of the circle, with a more jagged outline indicating more triangle wave, whilst smoother indicates more sine wave.</i>.
             <br/>
             <br/>
             You can view the code and fork the repo yourself on my <a href="https://github.com/ridleyjj/MultiFaderDrone">GitHub</a>.
