@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sound of Life Plugin</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
+  <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" />
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/jr_styles.css" />
+
+    <!-- for embedding vimeo -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+</head>
+
+<div id="lead-small">
+  <div id="lead-content">
+    <h1s><br />Sound of Life Plugin <a href="https://github.com/ridleyjj/SoundOfLife" target="_blank"><i class="fa fa-github" style="color:white;" aria-hidden="true"></i></a></h1s>
+    <div style="
+        display: flex;
+        justify-content: space-evenly;
+    ">
+    </div>
+  </div>
+  <!-- End #lead-content -->
+  <div id="lead-overlay"></div>
+  <!-- End #lead-down -->
+</div>
+<!-- End #lead -->
+
+<body>
+  <div id="mobile-menu-open" class="shadow-large">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+  <!-- End #mobile-menu-toggle -->
+  <header>
+    <div id="mobile-menu-close">
+      <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <ul id="menu" class="shadow">
+      <li>
+        <a class="no-scroll" href="https://jjridley.com">Home</a>
+      </li>
+      <li>
+        <a href="#about">Project Description</a>
+      </li>
+    </ul>
+  </header>
+  <!-- End header -->
+
+  <!-- video demo start -->
+  <div class="container centered" style="flex-direction: column; gap: 1rem; margin-block: 1rem;">
+    <div class="centered video-demo" >
+      <iframe title="vimeo-player" src="https://player.vimeo.com/video/1088445415?h=9d6a49b450" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <i>This is a demo that my friend <a href="https://www.andrewramseysounds.com/">Andrew Ramsey</a> made with an earlier prototype of the plugin. Andrew uses two instances of the plugin, each connected to Spitfire LABS instruments, 
+    along with Ableton's MIDI mapping capabilities which create a harmonious cloud of sound, controlled by the Game of Life.</i>
+  </div>
+  <!-- video demo end -->
+
+  <div id="about" style="border-bottom:none;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2 class="heading">Project Description</h2>
+        </div>
+        <div class="col-md-8">
+          <p>
+            <b style="color: red">Disclaimer:</b> <i>This project is a work in progress, please excuse the awkward GUI.</i>
+            <br/>
+            <br/>
+            The goal of this project is to make a MIDI Plugin that connects the principles of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">John Conway's 'Game of Life'</a> with sound.
+            <br/>
+            <br/>
+            I thought this would be a fun contender for a MIDI Plugin, as it allows users to mess around with the Game of Life as a source for movement in the tones created, but also allows them to connect it to whichever MIDI instrument or output that they want. 
+            <br/>
+            <br/>
+            The plugin shows an 8x8 grid of cells, the cells can be either 'on' or 'off'. They can be switched by using the mouse or using the randomise button, and then you can trigger generations which obey the 
+            Game of Life's rules (checking the number of 'on' neighbours that a cell has in order to determine whether it should be on or off in the next generation). Each cell in the grid 
+            is assigned a MIDI note number, and when the cell turns on it sends a note on message, and when the cell turns off it sends a note off message.
+            <br/>
+            <br/>
+            In order to make the grid activity more lively, I've set it up so that the grid is effectively stitched together at all sides - so that the cells on the right most side 
+            are considered directly next to the cells on the left most side and the top is considered next to the bottom as well. This avoids the issue of the cells simply 'crawling' 
+            off the grid and making no more sound. Since the sides are stitched together, the activity is more concentrated and famous perpetual patterns in the Game of Life such as 
+            the glider are actually perpetual rather than just moving until they are off the screen <i></i>.
+            <br/>
+            <br/>
+            <!-- gif demo start -->
+            <div class="centered" style="margin:1rem;">
+              <img src="images/SoundOfLife_WIP_2_gif.gif" style="width: 400px;" class="inline-image" alt="A gif of the Sound of Life plugin. It shows the grid changing according to the rules of the Game of Life, firstly with the famous Glider preset which is a known pattern that will 
+              go on forever in the game of life, and then with the user interacting with the mouse and randomising the grid.">
+            </div>
+            <!-- gif demo end -->
+            <br/>
+            <br/>
+            The user is given control for:
+            <ul class="list">
+              <li><b>Auto Mode</b> - when on, the generations trigger at a set frequency, when off they have to be manually triggered by the user.</li> 
+              <li><b>Interval</b> - the frequency at which the next generations trigger when the plugin is in 'Auto' mode.</li> 
+              <li><b>Tempo Sync</b> - when this is on and the plugin is in 'Auto' mode, the generations will be triggered by the beats of the DAWs tempo.</li> 
+              <li><b>Velocity</b> - this sets the velocity of the MIDI notes. <i>Planning to develop this to a range setting where note velocities will be set randomly from a range</i></li> 
+              <li><b>Accept MIDI Note Off Input</b> - when this is off, any MIDI notes that the user inputs to the plugin, for example via a MIDI keyboard, will be used to set the associated cells 'on' 
+              but will not turn the cells off when the note 'off' message is received. This is so that the MIDI input can be a way of giving the grid more cells to interact with, whilst still allowing 
+            the Game of Life rules to be the way in which the notes turn off. If this is set to on then the MIDI input device can turn cells off as well when a note is released.</li>
+            </ul>
+            The preset dropdown at the top of the plugin purposefully <i>only saves the grid state to the preset</i>. This way users can swap between presets on the go whilst triggering generations without 
+            worrying about settings like velocity or the interval changing.
+            <div class="centered" style="margin-block:1rem;">
+              <img src="images/SoundOfLife_WIP_Presets.gif" style="width: 400px;" class="inline-image" alt="A gif of the Sound of Life plugin. It shows the user cycling through the various presets of well known Game of Life patterns 
+              such as the 'Beacon', the 'Glider' and the 'Spinner'. The plugin is in auto mode and we see that the generations continue to generate uninterupted whilst the user cycles through the presets and the 
+              user values such as velocity and interval are not changed by the preset.">
+            </div>
+            You can view the code and fork the repo yourself on my <a href="https://github.com/ridleyjj/SoundOfLife">GitHub</a>.
+            <br/>
+            <br/>
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End #about -->
+
+  <footer>
+    <div class="container">
+
+
+      <div class="row center">
+        <div class="SquareArea">
+          <div class="LilSquare"></div>
+          <div class="MedSquare"></div>
+          <div class="BigSquare"></div>
+          <div class="MedSquare"></div>
+          <div class="LilSquare"></div>
+          <div class="SunLine"></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End footer -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161204876-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "UA-161204876-1");
+  </script>
+
+  <script src="js/scripts.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+  <script>
+    $(function () {
+      $(".awesome-portfolio-content").mixItUp({
+        animation: {
+          duration: 250,
+          nudge: false,
+          reverseOut: false,
+          effects: "fade",
+        },
+      });
+    });
+  </script>
+</body>
+
+</html>
