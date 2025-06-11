@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
+  <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css" />
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/jr_styles.css" />
+
+    <!-- for embedding vimeo -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+</head>
+
+<div id="lead-small">
+  <div id="lead-content">
+    <h1s><br />About Me</h1s>
+    <div style="
+        display: flex;
+        justify-content: space-evenly;
+    ">
+    </div>
+  </div>
+  <!-- End #lead-content -->
+  <div id="lead-overlay"></div>
+  <!-- End #lead-down -->
+</div>
+<!-- End #lead -->
+
+<body>
+  <div id="mobile-menu-open" class="shadow-large">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+  <!-- End #mobile-menu-toggle -->
+  <header>
+    <div id="mobile-menu-close">
+      <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <ul id="menu" class="shadow">
+      <li>
+        <a class="no-scroll" href="https://jjridley.com">Home</a>
+      </li>
+    </ul>
+  </header>
+  <!-- End header -->
+
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <!-- <div class="col-md-4">
+          <h2 class="heading"></h2>
+        </div> -->
+        <div class="centered">
+          <p>
+            <b>My joy as a Designer comes from designing for the user</b>; using technical complexity
+             to present user experiences that feel intuitive and expressive.
+             <br /><br />
+             I love the challenge of designing for the unpredictable user, aiming to design tools that enable 
+             creation well beyond what I may have imagined.
+            <br /><br />
+            My career began in the theatre, studying performance art and working as a Sound Designer 
+            and Composer for live stage productions. Here my greatest enjoyment came from designing 
+            procedural sound systems that could respond dynamically in real-time to performers and audiences.
+            <br /><br />
+            I was able to explore the technical possibilities of these procedural systems in more depth during 
+            the University of Edinburgh’s MSc in Sound Design, where software such as Max/MSP, Unity, Unreal 
+            Engine, and Wwise allowed me to create ever more complex interactions. I began using C++ to develop 
+            audio plugins in the JUCE framework. This was revelatory, as I found programming was surprisingly 
+            creative and engaged with all the technical and creative challenges that make work exciting for me.
+            <br /><br />
+            Since completing my studies, I have jumped headfirst into the world of Software as a Full Stack Developer 
+            with Accolite in Glasgow, rounding out my initial experiences of programming with the wide world of 
+            Application Architecture and Development. I have especially enjoyed being indoctrinated into the world of 
+            team Agile Development, designing Graphical User Interfaces, and learning to love the painful art of automated testing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End #about -->
+
+  <footer>
+    <div class="container">
+
+
+      <div class="row center">
+        <div class="SquareArea">
+          <div class="LilSquare"></div>
+          <div class="MedSquare"></div>
+          <div class="BigSquare"></div>
+          <div class="MedSquare"></div>
+          <div class="LilSquare"></div>
+          <div class="SunLine"></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End footer -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161204876-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "UA-161204876-1");
+  </script>
+
+  <script src="js/scripts.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+  <script>
+    $(function () {
+      $(".awesome-portfolio-content").mixItUp({
+        animation: {
+          duration: 250,
+          nudge: false,
+          reverseOut: false,
+          effects: "fade",
+        },
+      });
+    });
+  </script>
+</body>
+
+</html>
