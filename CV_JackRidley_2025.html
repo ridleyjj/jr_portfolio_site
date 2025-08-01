@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Jack Ridley</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        @page {
+            size: A4;
+            margin: 12mm;
+        }
+
+        html,
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            color:#7e8890;
+            line-height: 1.4rem;
+        }
+
+        .page-container {
+            width: 210mm;
+            margin: 0 12mm;
+            position: relative;
+        }
+
+        .skills-list {
+            column-count: 4;
+        }
+
+        h1 {
+            color: #3893e3;
+            font-weight: 1500;
+            font-size: 2.25em;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            color: #563de4;
+            font-weight: 600;
+            font-size: 1.5em;
+            margin-top: 5px;
+        }
+
+        .contact-box {
+            position: absolute;
+            top: 10px;
+            left: 650px;
+        }
+
+        .contact-item {
+            font-size: 0.75rem;
+        }
+
+        .fa {
+            margin-right: 0.5rem;
+        }
+
+        h3 {
+            color: #3893e3;
+        }
+
+        .education-container, .education-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .course, .grade, .institution {
+            margin-right: 0.65rem;
+        }
+
+        .role-title, .course {
+            color: #563de4;
+            font-weight: 600;
+        }
+
+        .employer {
+            font-weight: 600;
+        }
+
+        .item {
+            padding-left: 1rem;
+            margin-left: 1rem;
+            border-left: 1.5px solid #3893e3;
+        }
+
+        .item-title {
+            font-weight: 600;
+        }
+
+        .date-range {
+            float: right;
+            font-weight: 100;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <h1>Jack Ridley</h1>
+        <h2>Software Engineer</h2>
+        <div class="contact-box">
+            <div class="contact-item"><i class="fa fa-envelope"></i> ridley.jj@outlook.com</div>
+            <div class="contact-item"><i class="fa fa-globe"></i> www.jjridley.com</div>
+            <div class="contact-item"><i class="fa fa-github"></i> github.com/ridleyjj</div>
+        </div>
+
+        <!-- intro start -->
+        <p>
+            Software Engineer with a background in sound design, audio programming and DSP. Experienced in automation, C++/JUCE, and full-stack web development. Skilled at bridging creative sound design with rigorous engineering practices to deliver robust, high-quality audio systems.
+        </p>
+        <!-- intro end -->
+
+        <!-- education start -->
+        <div class="education">
+            <h3>Education</h3>
+            <div class="education-container">
+                <div class="education-item">
+                    <div class="course">
+                        MSc Sound Design
+                    </div>
+                    <div class="grade">
+                        1st
+                    </div>
+                    <div class="institution">
+                        University of Edinburgh
+                    </div>
+                </div>
+                <div class="divider">|</div>
+                <div class="education-item">
+                    <div class="course">
+                        BA (Hons) Drama
+                    </div>
+                    <div class="grade">
+                        2:1
+                    </div>
+                    <div class="institution">
+                        Queen Mary University of London
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- education end -->
+
+        <!-- skills start -->
+        <div class="section">
+            <h3>Relevant Technical Skills</h3>
+            <ul class="skills-list">
+                <li>Python</li>
+                <li>C++</li>
+                <li>Java</li>
+                <li>TypeScript</li>
+                <li>Git</li>
+                <li>Linux CLI</li>
+                <li>Shell scripting</li>
+                <li>CI/CD (Jenkins)</li>
+                <li>Docker</li>
+                <li>DSP</li>
+                <li>JUCE Framework</li>
+                <li>Max/MSP & PureData</li>
+                <li>Audio Codecs</li>
+                <li>Networking Protocols (OSC, MIDI, TCP/IP)</li>
+                <li>SonarQube</li>
+            </ul>
+        </div>
+        <!-- skills end -->
+
+        <!-- experience start -->
+        <div class="section">
+            <h3>Experience</h3>
+            <div><span class="role-title">Software Engineer</span> - <span class="employer">Morgan Stanley (Glasgow)</span> <span class="date-range">2022 - present</span></div>
+            <div class="experience">
+                <div class="item">
+                    <p class="item-description">
+                        Full-stack engineer working within an Agile team on high-reliability software solutions. 
+                        Focus on user experience, automation, and maintainable code.
+                    </p>
+                    <ul class="item-list">
+                        <li>Worked extensively with Linux CLI for build, deployment, and debugging tasks.</li>
+                        <li>Led UI/UX consolidation efforts, improving interface consistency and accessibility.</li>
+                        <li>Implemented CI/CD pipelines using Jenkins for automated builds and tests.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div><span class="role-title">Sound Designer & Audio Developer</span> - <span class="employer">Freelance</span> <span class="date-range">2018 - present</span></div>
+            <div class="experience">
+                <div class="item">
+                    <p class="item-description">
+                        Designed and implemented real-time audio systems for theatre, interactive installations, and commercial audio products.
+                    </p>
+                    <ul class="item-list">
+                        <li>Developed audio plugins using both real-time synsthesis and MIDI.</li>
+                        <li>Integrated OSC networking protocols for multi-device control setups.</li>
+                        <li>Narrated, edited, and mastered audiobooks to industry standards.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- experience end -->
+
+        <!-- notable projects starts -->
+        <div class="notable-projects">
+            <h3>Notable Projects</h3>
+            <div><span class="role-title">Multi Fader Drone Audio Plugin</span></div>
+            <div class="item">
+                <ul class="item-list">
+                    <li>C++ audio synthesiser plugin using JUCE framework with 2–100 oscillators and real-time DSP visualisation.</li>
+                    <li>GitHub: <a href="https://github.com/ridleyjj/MultiFaderDrone">https://github.com/ridleyjj/MultiFaderDrone</a></li>
+                </ul>
+            </div>
+
+            <div><span class="role-title">Research Project</span> - <span class="employer">"Sonic Gestures: Investigating Joy in Physical Sound Interactions"</span></div>
+            <div class="item">
+                <ul class="item-list">
+                    <li>Developed an interface for LeapMotion hand tracking, which converted the LeapMotion data into OSC messages receivable by Max/MSP.</li>
+                    <li>Designed 11 custom DSP-driven hand-controlled sound interactions.</li>
+                    <li>Explored trade-offs between intuitiveness and expressivity for user experience design.</li>
+                    <li>Project page: <a href="https://jjridley.com/physicalsoundinteractions">https://jjridley.com/physicalsoundinteractions</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- notable projects end -->
+    </div>
+</body>
+</html>
