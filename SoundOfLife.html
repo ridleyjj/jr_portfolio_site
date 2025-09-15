@@ -69,10 +69,9 @@
   <!-- video demo start -->
   <div class="container centered" style="flex-direction: column; gap: 1rem; margin-block: 1rem;">
     <div class="centered video-demo" >
-      <iframe title="vimeo-player" src="https://player.vimeo.com/video/1088445415?h=9d6a49b450" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+      <iframe title="vimeo-player" src="https://www.youtube.com/embed/l7lHhL02lpM" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
     </div>
-    <i>This is a demo that my friend <a href="https://www.andrewramseysounds.com/">Andrew Ramsey</a> made with an earlier prototype of the plugin. Andrew uses two instances of the plugin, each connected to Spitfire LABS instruments, 
-    along with Ableton's MIDI mapping capabilities which create a harmonious cloud of sound, controlled by the Game of Life.</i>
+    <i>This is a short demo of a few settings within the plugin, connected to some Spitfire Labs instruments to show the different possibilities of the MIDI out.</i>
   </div>
   <!-- video demo end -->
 
@@ -84,17 +83,14 @@
         </div>
         <div class="col-md-8">
           <p>
-            <b style="color: red">Disclaimer:</b> <i>This project is a work in progress, please excuse the awkward GUI.</i>
-            <br/>
-            <br/>
             The goal of this project is to make a MIDI Plugin that connects the principles of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">John Conway's 'Game of Life'</a> with sound.
             <br/>
             <br/>
-            I thought this would be a fun contender for a MIDI Plugin, as it allows users to mess around with the Game of Life as a source for movement in the tones created, but also allows them to connect it to whichever MIDI instrument or output that they want. 
+            I thought this would be a fun contender for a MIDI Plugin, as it allows users to experiment with the Game of Life as a source for movement in the tones created, but also allows them to connect it to whichever MIDI instrument or output that they want. 
             <br/>
             <br/>
-            The plugin shows an 8x8 grid of cells, the cells can be either 'on' or 'off'. They can be switched by using the mouse or using the randomise button, and then you can trigger generations which obey the 
-            Game of Life's rules (checking the number of 'on' neighbours that a cell has in order to determine whether it should be on or off in the next generation). Each cell in the grid 
+            The plugin shows an 8x8 grid of cells, the cells can be either 'on' or 'off'. They can be switched by using the mouse the randomise button, and then generations (which affect the state of all of the cells) 
+            can be triggered which obey the Game of Life's rules (checking the number of 'on' neighbours that a cell has in order to determine whether it should be on or off in the next generation). Each cell in the grid 
             is assigned a MIDI note number, and when the cell turns on it sends a note on message, and when the cell turns off it sends a note off message.
             <br/>
             <br/>
@@ -106,7 +102,7 @@
             <br/>
             <!-- gif demo start -->
             <div class="centered" style="margin:1rem;">
-              <img src="images/SoundOfLife_WIP_2_gif.gif" style="width: 400px;" class="inline-image" alt="A gif of the Sound of Life plugin. It shows the grid changing according to the rules of the Game of Life, firstly with the famous Glider preset which is a known pattern that will 
+              <img src="images/SoundOfLife.gif" style="width: 400px;" class="inline-image" alt="A gif of the Sound of Life plugin. It shows the grid changing according to the rules of the Game of Life, firstly with the famous Glider preset which is a known pattern that will 
               go on forever in the game of life, and then with the user interacting with the mouse and randomising the grid.">
             </div>
             <!-- gif demo end -->
@@ -118,17 +114,12 @@
               <li><b>Interval</b> - the frequency at which the next generations trigger when the plugin is in 'Auto' mode.</li> 
               <li><b>Tempo Sync</b> - when this is on and the plugin is in 'Auto' mode, the generations will be triggered by the beats of the DAWs tempo.</li> 
               <li><b>Velocity</b> - this sets the velocity of the MIDI notes. <i>Planning to develop this to a range setting where note velocities will be set randomly from a range</i></li> 
-              <li><b>Accept MIDI Note Off Input</b> - when this is off, any MIDI notes that the user inputs to the plugin, for example via a MIDI keyboard, will be used to set the associated cells 'on' 
-              but will not turn the cells off when the note 'off' message is received. This is so that the MIDI input can be a way of giving the grid more cells to interact with, whilst still allowing 
-            the Game of Life rules to be the way in which the notes turn off. If this is set to on then the MIDI input device can turn cells off as well when a note is released.</li>
+              <li><b>Scale Mapping</b> - by default, the cells in the grid are mapped to MIDI notes chromatically starting from C, so all standard notes will be covered within the total 
+              range. However in testing I found that mapping the grid to scale tones opens the plugin up to many more musical applications, so this setting allows the user to map the notes 
+              to either a major or minor scale as well as the chromatic scale. The user can also pick the starting tone of the scale.</li>
             </ul>
             The preset dropdown at the top of the plugin purposefully <i>only saves the grid state to the preset</i>. This way users can swap between presets on the go whilst triggering generations without 
             worrying about settings like velocity or the interval changing.
-            <div class="centered" style="margin-block:1rem;">
-              <img src="images/SoundOfLife_WIP_Presets.gif" style="width: 400px;" class="inline-image" alt="A gif of the Sound of Life plugin. It shows the user cycling through the various presets of well known Game of Life patterns 
-              such as the 'Beacon', the 'Glider' and the 'Spinner'. The plugin is in auto mode and we see that the generations continue to generate uninterupted whilst the user cycles through the presets and the 
-              user values such as velocity and interval are not changed by the preset.">
-            </div>
             You can view the code and fork the repo yourself on my <a href="https://github.com/ridleyjj/SoundOfLife">GitHub</a>.
             <br/>
             <br/>
