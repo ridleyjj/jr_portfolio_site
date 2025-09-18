@@ -7,16 +7,22 @@
 @media only screen and (max-width: 980px) {
     .video-demo {
         margin-block: 1rem;
-        height: 12rem;
         width: 100%;
+        iframe {
+            width: 560px;
+            height: 315px;
+        }
     }
 }
 
 @media only screen and (min-width: 980px) {
     .video-demo {
         margin-block: 1rem;
-        height: 25rem;
         width: 100%;
+        iframe {
+            width: 560px;
+            height: 315px;
+        }
     }
 }
 
@@ -49,22 +55,21 @@
 
 .carousel-section {
     width: 100%;
-    border-bottom: 5px solid #4c9ee7;
     display: flex;
     flex-direction: column;
     justify-content: left;
     align-items: center;
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 1020px) {
     .carousel-section {
-        height: 27rem;
+        height: 38rem;
     }
 }
 
-@media only screen and (min-width: 980px) {
+@media only screen and (min-width: 1020px) {
     .carousel-section {
-        height: 38rem;
+        height: 35rem;
     }
 }
 
