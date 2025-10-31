@@ -32,14 +32,15 @@ function setup() {
 function windowResized() {
   resizeCanvas(window.innerWidth - (2 * pagePadding), canvasHeight);
   cassette.setCassettePosition(width / 2, height / 2);
+
+  clear();
 }
 
 function draw() {
   if (!initialised) return;
 
-  fill(bg.r, bg.g, bg.b);
-
   scrollManager.tick();
 
+  fill(bg.r, bg.g, bg.b);
   cassette.draw(scrollManager.a);
 }
