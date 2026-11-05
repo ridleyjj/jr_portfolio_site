@@ -60,9 +60,9 @@
       <li>
         <a href="#about">Project Description</a>
       </li>
-      <!-- <li>
+      <li>
         <a href="#highlights">Highlights</a>
-      </li> -->
+      </li>
     </ul>
   </header>
   <!-- End header -->
@@ -90,7 +90,7 @@
             can help shape the game whilst development is still ongoing.
             <br/>
             <br/>
-            I was brought into the project in early 2026 as an Audio Programmer to help implement audio systems from the ground up.
+            I was brought into the project in early 2026 as an <b>Audio Programmer</b> to help implement audio systems from the ground up.
             <br/>
             <br/>
             More information and updates are available on the <a href="https://www.scarsofhonor.com/">Scars of Honor website</a>.
@@ -102,20 +102,91 @@
   <!-- End #about -->
 
   <!-- Start #highlights -->
-  <!-- <div id="highlights" style="border-bottom:none;">
+  <div id="highlights" style="border-bottom:none;">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
           <h2 class="heading">Audio System Highlights</h2>
         </div>
+
         <div class="col-md-8">
+          
+          <!-- Water system start -->
+          <h3 class="sub-heading">Ambient Water System</h3>
           <p>
-            .
+            I created a custom system for controlling the ambient sounds of bodies of water in the game, so that they would spatialise acurately whilst only requiring a single audio emitter for all ambient water sounds in the game.
+            <br/>
+            <br/>
+            This system was inspired by a series of articles written by Nic Taylor on the topic: <i>Approximate Position of Ambient Sounds of Multiple Sources</i> (2019) and <i>Voxel-Based Emitters</i> (2021) in Game Audio Programming <a href="https://www.routledge.com/Game-Audio-Programming-2-Principles-and-Practices/Somberg/p/book/9781032401799">2</a> and <a href="https://www.routledge.com/Game-Audio-Programming-3-Principles-and-Practices/Somberg/p/book/9780367348045">3</a> respectively (a great series edited by <a href="https://www.goodreads.com/author/list/15088725.Guy_Somberg">Guy Somberg</a>).
+            <br/>
+            <br/>
+            I highly recommend getting these books and reading the articles in full if you're interested in this topic. Nic covers a range of methods for approaching this problem, and I settled on a slightly simplified (i.e. slightly less clever) version of the voxel based approach.
+            <br/>
+            <div class="centered">
+              <img src="images/soh_water_system_diagram1.png" alt="A series of diagrams showing how the rivers in the game are approximated into a grid of points which can then be used to control the distance and spread of an audio emitter relative to the listener.">
+            </div>
+            the diagrams above demonstrate how the system works. A few key principles to start with are:
+            <ul>
+              <li>The water itself is represented as a <b>grid of points</b></li>
+              <li>The ambient water sounds are played from a <b>single emitter</b> (the purple dot in the diagrams) which is moved relative to the listener</li>
+              <li>The spread control on this emitter controls how much the sounds are spatialised - a large spread means that the sound would play with <b>less spatialisation</b> (like playing a file back through your headphones), whilst a lower spread would make the sound <b>more spatialised</b> (i.e. more panning from a single direction) </li>
+            </ul>
+            Nic Taylor explains how to use the positions of these grid points in order to attain a spread value and a weighted position for the audio emitter.
+            <br/>
+            <br/>
+            In the diagrams you can see how in <b>A</b> the audio emitter would appear very spatialised from a specific point when the player is facing only a single shore, whereas when the player becomes more surrounded by the shore line in <b>B</b> and eventually completely surrounded in <b>C</b> the audio emitter spread is manipulated to more accurately represent the scenario.
+            <br/>
+            <br/>
+            The video below demonstrates how this system sounds in practice:
+            <div class="centered video-demo">
+              <iframe src="https://www.youtube.com/embed/YDjOdoRh738?si=ZAGe-ORmFRHZXz_O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
           </p>
+          <!-- Water system end -->
+
+          <!-- Wwise Scripts start -->
+          <h3 class="sub-heading">Wwise Scripts</h3>
+          <p>
+            In order to optimise our workflows within the Wwise Authoring Tool, I created some custom <b>python scripts to automate certain actions</b>.
+            <br/>
+            <div class="centered video-demo">
+              <iframe src="https://www.youtube.com/embed/r8gMd92L6I8?si=h29BGUEUfzMXuVD0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <br/>
+            The scripts covered in this demo are:
+            <ul>
+              <li><b>Batch Set Instance Limit - </b>A script which allows you to set key <i>Instance Limit</i> settings on multiple objects which share the same tag in their notes section</li>
+              <li><b>HDR Scripts - </b>We used RTPCs to apply HDR settings to some of our sounds, these scripts allowed us to quickly edit the RTPC values for all the sounds at once, and also <i>refresh</i> the HDR settings to apply the RTPC values to new sounds or remove them from sounds no longer tagged for HDR</li>
+              <li><b>Create Variation Duplicate - </b>This was a tester script used to create a duplicate of a selected sound with additional RTPC data applied to the variation</li>
+            </ul>
+          </p>
+          <!-- Wwise scripts end -->
+
+          <!-- Footstep Detector start -->
+          <h3 class="sub-heading">Footstep Detector</h3>
+          <p>
+            Another tool that I made for the project was a Footstep Detector written in <b>C# to be used within the Unity Editor</b> for automating the process of adding footstep animation events to animation files.
+            <br/>
+            <br/>
+            This was a tool that really helped our workflow, as we decided that we wanted the reliability of animation events for triggering footsteps in the game, but with many models in the game for characters, NPCs, and mounts we wanted to avoid the manual slow process of adding and managing events in each of the separate animation files.
+            <br/>
+            <br/>
+            The system tracks how the animation moves the models feet, and places animaiton events wherever the feet hit their lowest point in the animation. The system can also be set up to track any number of transforms for a given model for example for models with more than two feet.
+            <br/>
+            <br/>
+            The following video discusses the tool in further detail and demonstrates it working in practice:
+            <div class="centered video-demo">
+              <iframe src="https://www.youtube.com/embed/EbuW2aLPUXY?si=C6O9NUJyG6Hj6SHo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <br/>
+          </p>
+          <!-- Footstep Detector end -->
+
         </div>
+
       </div>
     </div>
-  </div> -->
+  </div>
   <!-- End #highlights -->
 
   <footer>
