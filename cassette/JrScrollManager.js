@@ -7,6 +7,7 @@ class JrScrollManager {
     dragDampening = 0.97;
     zeroLimit = 0.01; // limit at which point a is clamped to 0;
 
+    
     tick() {
         let diff = window.scrollY - this.prevScrollY;
 
