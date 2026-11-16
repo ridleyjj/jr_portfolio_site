@@ -27,6 +27,10 @@
 
   <link rel="stylesheet" href="css/jr_styles.css" />
 
+  <!-- p5 class and utils imports -->
+  <script src="libs/p5.min.js"></script>
+  <script src="cassette/JrScrollManager.js"></script>
+  <script src="waveform/SampleLine.js"></script>
 </head>
 
 <div id="lead-small">
@@ -96,22 +100,8 @@
   </div>
   <!-- End #about -->
 
-  <footer>
-    <div class="container">
-
-
-      <div class="row center">
-        <div class="SquareArea">
-          <div class="LilSquare"></div>
-          <div class="MedSquare"></div>
-          <div class="BigSquare"></div>
-          <div class="MedSquare"></div>
-          <div class="LilSquare"></div>
-          <div class="SunLine"></div>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <canvas id="waveform"></canvas>
+  <script src="waveform/sketch.js"></script>
   <!-- End footer -->
 
   <!-- Global site tag (gtag.js) - Google Analytics -->

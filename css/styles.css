@@ -988,7 +988,7 @@ footer {
 /* portfolio style */
 .awesome-portfolio-area {
     overflow: hidden;
-    padding-top: 50px;
+    /* padding-top: 50px; */
   }
   .section-heading{text-align:center}
   .section-heading h2 {
