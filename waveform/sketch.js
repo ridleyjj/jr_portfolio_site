@@ -1,14 +1,10 @@
 const waveform_sketch = function(p) {
-  var refresh_rate = 0;
-  var counter = 0;
   var buffer = []
-  var readIndex = 0;
-  var lineWidth = 5;
-  var maxLineHeight = 0;
+  var lineWidth = 3;
   var canvasHeightWaveform = 250;
   var scrollManagerWave;
-  var negative = false;
   var canvasElementWave;
+  var prevWidth;
 
   p.setup = function() {
     canvasElementWave = document.getElementById("waveform")
@@ -17,27 +13,27 @@ const waveform_sketch = function(p) {
 
     scrollManagerWave = new JrScrollManager();
     scrollManagerWave.dragDelay = 0;
-    scrollManagerWave.dragDampening = 0.9;
+    scrollManagerWave.dragDampening = 0.97;
 
-    var bufferSize = p.width / lineWidth;
-    maxLineHeight = (p.height / 2) - 40;
-    for (var i = 0; i < bufferSize; i++) {
-      buffer.push(p.random(maxLineHeight));
-    }
+    buffer = [];
+    fill_buffer(true);
 
-    draw_audio_wave()
+    prevWidth = p.width;
   }
 
-  function map_a_to_refresh_rate(value, minRate, maxRate) {
-    // starts 0-1
-    var range = maxRate - minRate;
-    value *= range;
-    value = Math.round(value);  // now 0 - 5
-    value = maxRate - value; // now 8 - 3
-    if (value == maxRate)
-      value = 0;
-
-    return value;
+  fill_buffer = function(isWider) {
+    var bufferSize = p.width / lineWidth;
+    if (isWider) {
+      i = buffer.length;
+      while (buffer.length < bufferSize) {
+        buffer.push(new SampleLine(p, i * lineWidth, lineWidth));
+        i++;
+      }
+    } else {
+      while (buffer.length > bufferSize) {
+        buffer.pop();
+      }
+    }
   }
 
   p.draw = function() {
@@ -47,66 +43,24 @@ const waveform_sketch = function(p) {
     }
     scrollManagerWave.tick();
 
-    negative = scrollManagerWave.a < 0;
-    var a = map_a_to_refresh_rate ( Math.abs(scrollManagerWave.a), 2, 6 );
-
-    refresh_rate = a;
-
-    if (!should_update())
-      return;
-
-    // blue: 76, 158, 231
+    // // blue: 76, 158, 231
 
     p.background(255, 255, 255);
 
-    draw_waveform();
+    let a = Math.min(8, Math.abs(scrollManagerWave.a) * 30);
+
+    buffer.forEach((sample) => {
+      sample.update(a);
+      sample.draw();
+    });
   }
 
-  function draw_audio_wave() {
-    p.background(255, 255, 255);
+  p.windowResized = () => {
+    let isWider = window.innerWidth >= prevWidth;
 
-    draw_waveform();
-  }
-
-  function should_update() {
-    if (refresh_rate == 0) {
-      counter = 0;
-      return false;
-    }
-
-    counter++;
-    if (counter >= refresh_rate) {
-      counter = 0;
-      return true;
-    }
-
-    return false;
-  }
-
-  function draw_waveform() {
-    p.stroke(76, 158, 231);
-    p.strokeWeight(lineWidth);
-    for (var i = 0; i < buffer.length; i++) {
-      
-        // var amplitude = random(maxLineHeight);
-      var index = (readIndex + i) % buffer.length;
-      var amplitude = buffer[index];
-      draw_sample(amplitude, i * lineWidth, p.height / 2);
-    }
-    buffer[readIndex] = p.random(maxLineHeight);
-    if (negative)
-      readIndex--;
-    else
-      readIndex++;
-    if (readIndex >= buffer.length)
-      readIndex = 0;
-    else if (readIndex < 0)
-      readIndex = buffer.length - 1;
-  }
-
-  function draw_sample(amplitude, x, y) {
-    p.line(x, y, x, y + amplitude);
-    p.line(x, y, x, y - amplitude);
+    p.resizeCanvas(window.innerWidth, canvasHeightWaveform);
+    fill_buffer(isWider);
+    prevWidth = p.width;
   }
 }
 
