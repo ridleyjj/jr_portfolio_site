@@ -1,5 +1,7 @@
 class Cassette {
 
+    p;
+
     height = 200;
     width = this.height * 1.6;
     padding = this.height * 0.06;
@@ -12,8 +14,9 @@ class Cassette {
     mainPrintFont = "Verdana";
     labelName = "Software Developer";
 
-    constructor(x, y, bg) {
-        this.setCassettePosition(x, y);
+    constructor(p, bg) {
+        this.p = p;
+        this.setCassettePosition(p.width / 2, p.height / 2);
         this.bg = bg;
     }
 
@@ -28,119 +31,119 @@ class Cassette {
 
     draw(acceleration) {
         // stroke weight calibrated to 4 for height of 200 - may adjust this later
-        strokeWeight(this.strokeWeight);
+        this.p.strokeWeight(this.strokeWeight);
 
         // main body
-        fill(222, 81, 20);
-        rect(this.x, this.y, this.width, this.height, 5);
+        this.p.fill(222, 81, 20);
+        this.p.rect(this.x, this.y, this.width, this.height, 5);
 
         // TODO - clean up this drawing logic
 
         // bottom section
-        beginShape();
+        this.p.beginShape();
         let shapeX = this.x + this.width * 0.2;
         let shapeY = this.y + this.height;
-        vertex(shapeX, shapeY);
+        this.p.vertex(shapeX, shapeY);
         shapeX += this.width * 0.04;
         shapeY -= this.height * 0.23;
-        vertex(shapeX, shapeY);
+        this.p.vertex(shapeX, shapeY);
         shapeX += this.width * 0.52;
-        vertex(shapeX, shapeY);
+        this.p.vertex(shapeX, shapeY);
         shapeX += this.width * 0.04;
         shapeY += this.height * 0.23;
-        vertex(shapeX, shapeY);
-        endShape(CLOSE);
+        this.p.vertex(shapeX, shapeY);
+        this.p.endShape(this.p.CLOSE);
         
         // holes
-        circle(this.rightX, this.topY, this.cornerCircleSize);
-        circle(this.rightX, this.bottomY, this.cornerCircleSize);
-        circle(this.leftX, this.topY, this.cornerCircleSize);
-        circle(this.leftX, this.bottomY, this.cornerCircleSize);
+        this.p.circle(this.rightX, this.topY, this.cornerCircleSize);
+        this.p.circle(this.rightX, this.bottomY, this.cornerCircleSize);
+        this.p.circle(this.leftX, this.topY, this.cornerCircleSize);
+        this.p.circle(this.leftX, this.bottomY, this.cornerCircleSize);
         
-        circle(this.leftX + this.width * 0.25, this.bottomY - this.height * 0.015, this.cornerCircleSize);
-        circle(this.rightX - this.width * 0.25, this.bottomY - this.height * 0.015, this.cornerCircleSize);
-        circle(this.x + this.width * 0.5, this.bottomY - this.height * 0.09, this.cornerCircleSize);
+        this.p.circle(this.leftX + this.width * 0.25, this.bottomY - this.height * 0.015, this.cornerCircleSize);
+        this.p.circle(this.rightX - this.width * 0.25, this.bottomY - this.height * 0.015, this.cornerCircleSize);
+        this.p.circle(this.x + this.width * 0.5, this.bottomY - this.height * 0.09, this.cornerCircleSize);
 
         // middle section
-        fill(255, 255, 255);
-        beginShape();
+        this.p.fill(255, 255, 255);
+        this.p.beginShape();
         shapeX = this.x + this.width * 0.05;
         shapeY = this.y + this.height * 0.7;
-        vertex(shapeX, shapeY);
+        this.p.vertex(shapeX, shapeY);
         shapeY -= this.height * 0.54;
-        vertex(shapeX, shapeY);
+        this.p.vertex(shapeX, shapeY);
         shapeX += this.width * 0.05;
         shapeY -= this.height * 0.08;
-        vertex(shapeX, shapeY);
+        this.p.vertex(shapeX, shapeY);
         shapeX = this.x + this.width * 0.9;
-        vertex(shapeX, shapeY);
+        this.p.vertex(shapeX, shapeY);
         shapeX += this.width * 0.05;
         shapeY += this.height * 0.08;
-        vertex(shapeX, shapeY);
+        this.p.vertex(shapeX, shapeY);
         shapeY += this.height * 0.54;
-        vertex(shapeX, shapeY);
-        endShape(CLOSE);
+        this.p.vertex(shapeX, shapeY);
+        this.p.endShape(this.p.CLOSE);
 
-        push();
-        fill(240, 195, 72);
-        noStroke();
-        rect(this.x + this.width * 0.05 + this.strokeWeight * 0.5, this.y + this.height * 0.3, this.width * 0.9 - this.strokeWeight, this.height * 0.4 - this.strokeWeight * 0.5);
-        pop();
-        push();
+        this.p.push();
+        this.p.fill(240, 195, 72);
+        this.p.noStroke();
+        this.p.rect(this.x + this.width * 0.05 + this.strokeWeight * 0.5, this.y + this.height * 0.3, this.width * 0.9 - this.strokeWeight, this.height * 0.4 - this.strokeWeight * 0.5);
+        this.p.pop();
+        this.p.push();
         // don't think I like this line but leaving it in for comparison
         //line(this.x + this.width * 0.05, this.y + this.height * 0.3, this.x + this.width * 0.95, this.y + this.height * 0.3);
-        fill(0, 0, 0);
-        textFont(this.mainPrintFont, this.height * 0.13);
-        text("A", this.x + this.width * 0.12, this.y + this.height * 0.24);
-        textFont(this.mainPrintFont, this.height * 0.07);
-        text("C-60", this.x + this.width * 0.82, this.y + this.height * 0.65);
-        textFont(this.boldFont, this.height * 0.07);
-        text("HQ", this.x + this.width * 0.08, this.y + this.height * 0.65);
-        stroke(0, 0, 0);
-        strokeWeight(this.strokeWeight * 0.5);
-        line(this.x + this.width * 0.25, this.y + this.height * 0.15, this.x + this.width * 0.85, this.y + this.height * 0.15);
-        line(this.x + this.width * 0.25, this.y + this.height * 0.23, this.x + this.width * 0.85, this.y + this.height * 0.23);
-        noStroke();
-        fill(45, 50, 170);
-        textFont(this.handwritingFont, this.height * 0.125);
-        text(this.labelName, this.x + this.width * 0.29, this.y + this.height * 0.22);
-        pop();
+        this.p.fill(0, 0, 0);
+        this.p.textFont(this.mainPrintFont, this.height * 0.13);
+        this.p.text("A", this.x + this.width * 0.12, this.y + this.height * 0.24);
+        this.p.textFont(this.mainPrintFont, this.height * 0.07);
+        this.p.text("C-60", this.x + this.width * 0.82, this.y + this.height * 0.65);
+        this.p.textFont(this.boldFont, this.height * 0.07);
+        this.p.text("HQ", this.x + this.width * 0.08, this.y + this.height * 0.65);
+        this.p.stroke(0, 0, 0);
+        this.p.strokeWeight(this.strokeWeight * 0.5);
+        this.p.line(this.x + this.width * 0.25, this.y + this.height * 0.15, this.x + this.width * 0.85, this.y + this.height * 0.15);
+        this.p.line(this.x + this.width * 0.25, this.y + this.height * 0.23, this.x + this.width * 0.85, this.y + this.height * 0.23);
+        this.p.noStroke();
+        this.p.fill(45, 50, 170);
+        this.p.textFont(this.handwritingFont, this.height * 0.125);
+        this.p.text(this.labelName, this.x + this.width * 0.29, this.y + this.height * 0.22);
+        this.p.pop();
 
         // cutaways
-        fill(this.bg.r, this.bg.g, this.bg.b);
-        rect(this.x + this.width * 0.37, this.bottomY - this.height * 0.04, this.width * 0.08, this.height * 0.055);
-        rect(this.x + this.width * 0.55, this.bottomY - this.height * 0.04, this.width * 0.08, this.height * 0.055);
+        this.p.fill(this.bg.r, this.bg.g, this.bg.b);
+        this.p.rect(this.x + this.width * 0.37, this.bottomY - this.height * 0.04, this.width * 0.08, this.height * 0.055);
+        this.p.rect(this.x + this.width * 0.55, this.bottomY - this.height * 0.04, this.width * 0.08, this.height * 0.055);
         
         let centreRowY = this.y + this.height * 0.5;
-        circle(this.x + this.width * 0.25, centreRowY, this.height * 0.25);
-        circle(this.x + this.width * 0.75, centreRowY, this.height * 0.25);
+        this.p.circle(this.x + this.width * 0.25, centreRowY, this.height * 0.25);
+        this.p.circle(this.x + this.width * 0.75, centreRowY, this.height * 0.25);
         let smallRectW = this.width * 0.28;
         let smallRectH = this.height * 0.25;
-        rect(this.x + this.width * 0.36, centreRowY - smallRectH * 0.5, smallRectW, smallRectH);
+        this.p.rect(this.x + this.width * 0.36, centreRowY - smallRectH * 0.5, smallRectW, smallRectH);
 
         // tape wheels
-        fill(100);
-        beginShape();
+        this.p.fill(100);
+        this.p.beginShape();
         shapeX = this.x + this.width * 0.36;
         shapeY = centreRowY - smallRectH * 0.5;
-        vertex(shapeX, shapeY);
+        this.p.vertex(shapeX, shapeY);
         shapeY += smallRectH;
-        vertex(shapeX, shapeY);
+        this.p.vertex(shapeX, shapeY);
         shapeX += smallRectW * 0.3;
-        vertex(shapeX, shapeY);
-        bezierVertex(shapeX + smallRectW * 0.05, shapeY - smallRectH * 0.4, shapeX + smallRectW * 0.05, shapeY - smallRectH * 0.6, shapeX, shapeY - smallRectH);
-        endShape(CLOSE);
+        this.p.vertex(shapeX, shapeY);
+        this.p.bezierVertex(shapeX + smallRectW * 0.05, shapeY - smallRectH * 0.4, shapeX + smallRectW * 0.05, shapeY - smallRectH * 0.6, shapeX, shapeY - smallRectH);
+        this.p.endShape(this.p.CLOSE);
 
-        beginShape();
+        this.p.beginShape();
         shapeX = this.x + this.width * 0.36 + smallRectW;
         shapeY = centreRowY - smallRectH * 0.5;
-        vertex(shapeX, shapeY);
+        this.p.vertex(shapeX, shapeY);
         shapeY += smallRectH;
-        vertex(shapeX, shapeY);
+        this.p.vertex(shapeX, shapeY);
         shapeX -= smallRectW * 0.3;
-        vertex(shapeX, shapeY);
-        bezierVertex(shapeX - smallRectW * 0.05, shapeY - smallRectH * 0.4, shapeX - smallRectW * 0.05, shapeY - smallRectH * 0.6, shapeX, shapeY - smallRectH);
-        endShape(CLOSE);
+        this.p.vertex(shapeX, shapeY);
+        this.p.bezierVertex(shapeX - smallRectW * 0.05, shapeY - smallRectH * 0.4, shapeX - smallRectW * 0.05, shapeY - smallRectH * 0.6, shapeX, shapeY - smallRectH);
+        this.p.endShape(this.p.CLOSE);
 
         // wheel teeth
         this.offset += 0.1 * acceleration;
@@ -154,17 +157,17 @@ class Cassette {
      * offset is between 0-1 and will spin the wheels
      */
     drawWheelTeeth(originX, originY) {
-        fill(255);
-        push();
-        angleMode(DEGREES);
-        rectMode(CENTER);
+        this.p.fill(255);
+        this.p.push();
+        this.p.angleMode(this.p.DEGREES);
+        this.p.rectMode(this.p.CENTER);
         let toothSize = this.height * 0.045;
-        translate(originX, originY);
-        rotate(60 * this.offset);
+        this.p.translate(originX, originY);
+        this.p.rotate(60 * this.offset);
         for (let i = 0; i < 6; i++) {
-            rotate(60);
-            square(0, this.height * 0.1, toothSize, 1.2);
+            this.p.rotate(60);
+            this.p.square(0, this.height * 0.1, toothSize, 1.2);
         }
-        pop();
+        this.p.pop();
     }
 }

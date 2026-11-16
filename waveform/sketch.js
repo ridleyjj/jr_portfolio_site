@@ -5,13 +5,14 @@ const waveform_sketch = function(p) {
   var scrollManagerWave;
   var canvasElementWave;
   var prevWidth;
+  var paddingWaveform = 15;
 
   p.setup = function() {
     canvasElementWave = document.getElementById("waveform")
 
-    p.createCanvas(window.innerWidth , canvasHeightWaveform, "P2D", canvasElementWave);
+    p.createCanvas(window.innerWidth - paddingWaveform, canvasHeightWaveform, "P2D", canvasElementWave);
 
-    scrollManagerWave = new JrScrollManager();
+    scrollManagerWave = new JrScrollManager(p);
     scrollManagerWave.dragDelay = 0;
     scrollManagerWave.dragDampening = 0.97;
 
@@ -22,7 +23,7 @@ const waveform_sketch = function(p) {
   }
 
   fill_buffer = function(isWider) {
-    var bufferSize = p.width / lineWidth;
+    var bufferSize = Math.round(p.width / lineWidth);
     if (isWider) {
       i = buffer.length;
       while (buffer.length < bufferSize) {
@@ -58,10 +59,10 @@ const waveform_sketch = function(p) {
   p.windowResized = () => {
     let isWider = window.innerWidth >= prevWidth;
 
-    p.resizeCanvas(window.innerWidth, canvasHeightWaveform);
+    p.resizeCanvas(window.innerWidth - paddingWaveform, canvasHeightWaveform);
     fill_buffer(isWider);
     prevWidth = p.width;
   }
 }
 
-const jr_sketch_2 = new p5(waveform_sketch)
+const jr_sketch_2 = new p5(waveform_sketch);
