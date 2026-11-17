@@ -5,12 +5,11 @@ const waveform_sketch = function(p) {
   var scrollManagerWave;
   var canvasElementWave;
   var prevWidth;
-  var paddingWaveform = 15;
 
   p.setup = function() {
     canvasElementWave = document.getElementById("waveform")
 
-    p.createCanvas(window.innerWidth - paddingWaveform, canvasHeightWaveform, "P2D", canvasElementWave);
+    p.createCanvas(document.body.offsetWidth, canvasHeightWaveform, "P2D", canvasElementWave);
 
     scrollManagerWave = new JrScrollManager(p);
     scrollManagerWave.dragDelay = 0;
@@ -57,9 +56,8 @@ const waveform_sketch = function(p) {
   }
 
   p.windowResized = () => {
-    let isWider = window.innerWidth >= prevWidth;
-
-    p.resizeCanvas(window.innerWidth - paddingWaveform, canvasHeightWaveform);
+    p.resizeCanvas(document.body.offsetWidth, canvasHeightWaveform);
+    let isWider = p.width >= prevWidth;
     fill_buffer(isWider);
     prevWidth = p.width;
   }
